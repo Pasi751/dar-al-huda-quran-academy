@@ -298,7 +298,7 @@ const Homepage = () => {
       </div>
 
       <div
-        className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-48 sm:h-56 md:h-64"
+        className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
         onMouseEnter={(e) => {
           const img = e.currentTarget.querySelector('img');
           if (img) img.style.transform = 'scale(1.1)';
@@ -323,7 +323,7 @@ const Homepage = () => {
 
       {/* Card 3 */}
       <div
-        className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-48 sm:h-56 md:h-64"
+        className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
         onMouseEnter={(e) => {
           const img = e.currentTarget.querySelector('img');
           if (img) img.style.transform = 'scale(1.1)';

@@ -279,7 +279,7 @@ const FAQPage = () => {
 
     try {
 
-      const response = await fetch("https://formsubmit.co/ajax/43a79c4934aecfcb607f7e2ee990ae4b", {
+      const response = await fetch("https://formsubmit.co/ajax/daralhudaquranacademy@gmail.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',

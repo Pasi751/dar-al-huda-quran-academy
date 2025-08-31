@@ -29,8 +29,6 @@ const FeePage = () => {
       schedules: [
         { weekly: "2 classes/week", monthly: "8/month", gbp: "16", usd: "21" },
         { weekly: "3 classes/week", monthly: "12/month", gbp: "24", usd: "32" },
-        { weekly: "4 classes/week", monthly: "16/month", gbp: "32", usd: "43" },
-        { weekly: "5 classes/week", monthly: "20/month", gbp: "40", usd: "54" }
       ]
     },
     {
@@ -38,8 +36,6 @@ const FeePage = () => {
       schedules: [
         { weekly: "2 classes/week", monthly: "8/month", gbp: "20", usd: "30" },
         { weekly: "3 classes/week", monthly: "12/month", gbp: "30", usd: "45" },
-        { weekly: "4 classes/week", monthly: "16/month", gbp: "40", usd: "60" },
-        { weekly: "5 classes/week", monthly: "20/month", gbp: "50", usd: "75" }
       ]
     },
     {
@@ -47,8 +43,6 @@ const FeePage = () => {
       schedules: [
         { weekly: "2 classes/week", monthly: "8/month", gbp: "28", usd: "39" },
         { weekly: "3 classes/week", monthly: "12/month", gbp: "43", usd: "59" },
-        { weekly: "4 classes/week", monthly: "16/month", gbp: "58", usd: "79" },
-        { weekly: "5 classes/week", monthly: "20/month", gbp: "73", usd: "99" }
       ]
     },
     {
@@ -56,8 +50,6 @@ const FeePage = () => {
       schedules: [
         { weekly: "2 classes/week", monthly: "8/month", gbp: "25", usd: "34" },
         { weekly: "3 classes/week", monthly: "12/month", gbp: "37", usd: "50" },
-        { weekly: "4 classes/week", monthly: "16/month", gbp: "50", usd: "67" },
-        { weekly: "5 classes/week", monthly: "20/month", gbp: "62", usd: "83" }
       ]
     }
   ];
@@ -217,7 +209,7 @@ const FeePage = () => {
                 Course Fees & Payment Information
               </h1>
               <p className="text-xl font-inter font-thin text-white md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
-                At Dar Al Huda Quran Academy, we strive to make Quran learning accessible to students both locally and internationally.
+                At Dar Al Huda Quran Academy, we strive to make Quran learning accessible to students internationally.
               </p>
             </div>
           </div>
@@ -229,7 +221,7 @@ const FeePage = () => {
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
               <Clock className="w-12 h-12 text-customGreen mx-auto mb-4" />
               <h3 className="font-castoro text-xl text-customGreen mb-2">Class Duration</h3>
-              <p className="text-black font-inter font-base">Each class is approximately 30 minutes</p>
+              <p className="text-black font-inter font-base">Each class is approximately 30-45 minutes</p>
             </div>
 
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
@@ -264,7 +256,6 @@ const FeePage = () => {
                         <th className="px-6 py-4 text-left font-castoro text-base text-customGreen">Schedule/week</th>
                         <th className="px-6 py-4 text-left font-castoro text-base text-customGreen">Classes/month</th>
                         <th className="px-6 py-4 text-center font-castoro text-base text-customGreen">GBP (£)</th>
-                        <th className="px-6 py-4 text-center font-castoro text-base text-customGreen">USD ($)</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -273,7 +264,6 @@ const FeePage = () => {
                           <td className="px-6 py-4 text-black text-sm">{schedule.weekly}</td>
                           <td className="px-6 py-4 text-black text-sm">{schedule.monthly}</td>
                           <td className="px-6 py-4 text-center text-black font-medium text-sm">£{schedule.gbp}</td>
-                          <td className="px-6 py-4 text-center text-black font-medium text-sm">${schedule.usd}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -289,7 +279,7 @@ const FeePage = () => {
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <h2 className="text-3xl font-castoro text-customGreen text-center mb-12">Payment Methods</h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-1 gap-8">
               {/* International Students */}
               <div className="bg-gray-50 rounded-2xl p-8">
                 <div className="flex items-center mb-6">
@@ -299,36 +289,13 @@ const FeePage = () => {
                 <p className="text-black mb-4 font-medium">International students can pay securely via:</p>
                 <ul className="space-y-3 text-black text-sm">
                   <li className="flex items-center">
-                    Payoneer (GBP/USD)
+                    Payoneer (GBP)
                   </li>
                   <li className="flex items-center">
                     PayPal
                   </li>
                   <li className="flex items-center">
                     Bank Transfer
-                  </li>
-                </ul>
-              </div>
-
-              {/* Pakistani Students */}
-              <div className="bg-gray-50 rounded-2xl p-8">
-                <div className="flex items-center mb-6">
-                  <CreditCard className="w-8 h-8 text-customGreen mr-3" />
-                  <h3 className="text-2xl font-castoro text-customGreen">Pakistani Students</h3>
-                </div>
-                <p className="text-black mb-4 font-medium">Contact us for fee details and payment options in PKR via:</p>
-                <ul className="space-y-3 text-black text-sm">
-                  <li className="flex items-center">
-                    Bank Transfer
-                  </li>
-                  <li className="flex items-center">
-                    Easypaisa
-                  </li>
-                  <li className="flex items-center">
-                    JazzCash
-                  </li>
-                  <li className="flex items-center">
-                    Cash (for physical classes)
                   </li>
                 </ul>
               </div>
@@ -343,16 +310,13 @@ const FeePage = () => {
 
             <div className="bg-gray-50 rounded-2xl p-8 ">
               <div className="space-y-1 text-black text-sm">
-                <div className="flex items-start">
-                  <p>A student can take a maximum of <strong>1 hour class per day</strong>, and the charges would be doubled accordingly.</p>
-                </div>
 
                 <div className="flex items-start">
                   <p>Fees are due on the <strong>1st of each month</strong>, payable in advance, for the upcoming month's services.</p>
                 </div>
 
                 <div className="flex items-start">
-                  <p>Exact fees in local currencies may vary slightly due to <strong>exchange rate fluctuations</strong>.</p>
+                  <p>The fee for each course is payable either in full at the time of enrollment or through 2–3 convenient installments.</p>
                 </div>
 
                 <div className="flex items-start">
@@ -492,34 +456,6 @@ const FeePage = () => {
                     </select>
                     {errors.course && <p className="text-red-500 text-xs mt-1">{errors.course}</p>}
                   </div>
-                  <div>
-                    <label className="block font-inter text-black font-base mb-4">Class Type<span className="text-red-500">*</span></label>
-                    <div className="flex gap-6">
-                      <label className="flex items-center">
-                        <input 
-                          type="radio" 
-                          name="classType" 
-                          value="online" 
-                          checked={formData.classType === 'online'}
-                          onChange={handleInputChange}
-                          className="mr-2 text-customGreen focus:ring-customGreen" 
-                        />
-                        <span className="text-black">Online</span>
-                      </label>
-                      <label className="flex items-center">
-                        <input 
-                          type="radio" 
-                          name="classType" 
-                          value="inperson" 
-                          checked={formData.classType === 'inperson'}
-                          onChange={handleInputChange}
-                          className="mr-2 text-customGreen focus:ring-customGreen" 
-                        />
-                        <span className="text-black">In-Person</span>
-                      </label>
-                    </div>
-                    {errors.classType && <p className="text-red-500 text-xs mt-1">{errors.classType}</p>}
-                  </div>
                 </div>
               </div>
 
@@ -532,7 +468,7 @@ const FeePage = () => {
                   <div>
                     <label className="block font-inter text-black font-base mb-4">Preferred Days<span className="text-red-500">*</span></label>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Weekend'].map((day) => (
+                      {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
                         <label key={day} className="flex items-center">
                           <input 
                             type="checkbox" 

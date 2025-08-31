@@ -20,13 +20,12 @@ const CourseInfoPage = () => {
       title: "Noor al-Huruf (Qaida Course)",
       image: Qaida,
       description: "Learn the fundamentals of Arabic letters and basic Quranic reading. This foundational course is perfect for beginners who want to start their Quranic journey with proper letter recognition and pronunciation.",
-      duration: "3–7 months",
+      duration: "11 months",
       level: "Beginner",
       features: [
         "Arabic letter recognition and pronunciation",
         "Basic reading skills development",
         "Interactive learning methodology",
-        "One-on-one instructor guidance",
         "Progress tracking and assessments"
       ],
       whatYouLearn: [
@@ -36,14 +35,14 @@ const CourseInfoPage = () => {
         "Transition smoothly to Quran recitation"
       ],
       prerequisites: "No prior knowledge required",
-      price: "Contact for pricing"
+      price: "£255"
     },
     2: {
       id: 2,
       title: "Saut al-Quran (Recitation and Tajweed Course)",
       image: RecitingQuran,
       description: "From fluent reading to perfect pronunciation - a complete journey.",
-      duration: "6–12 months",
+      duration: "3.5 years",
       level: "Intermediate",
       features: [
         "Comprehensive Tajweed rules instruction",
@@ -60,14 +59,14 @@ const CourseInfoPage = () => {
         "Melodious voice development"
       ],
       prerequisites: "Basic Arabic reading ability (Qaida completion recommended)",
-      price: "Contact for pricing"
+      price: "£1,255"
     },
     3: {
       id: 3,
       title: "Hifz al-Nur (Memorization Course)",
       image: Hifz,
       description: "Embark on the noble journey of memorizing the Holy Quran. Our structured approach makes memorization achievable while maintaining strong retention and understanding.",
-      duration: "2-4 years (varies by individual)",
+      duration: "3 Years",
       level: "Advanced",
       features: [
         "Systematic memorization methodology",
@@ -84,21 +83,20 @@ const CourseInfoPage = () => {
         "Deep spiritual connection"
       ],
       prerequisites: "Strong Arabic reading skills and Tajweed knowledge",
-      price: "Contact for pricing"
+      price: "£1540"
     },
     4: {
       id: 4,
       title: "Duas for Daily Life (Practical Duas Mini Course)",
       image: Duas,
       description: "Learn essential daily duas that every Muslim should know. This practical course covers prayers for various situations and daily activities with proper pronunciation and meanings.",
-      duration: "2-3 months",
+      duration: "3 months",
       level: "Beginner to Intermediate",
       features: [
         "Essential daily duas collection",
         "Meaning and context explanation",
         "Pronunciation guidance",
-        "Practical application tips",
-        "Digital dua booklet included"
+        "Practical application tips"
       ],
       whatYouLearn: [
         "Morning and evening duas",
@@ -108,14 +106,14 @@ const CourseInfoPage = () => {
         "Proper pronunciation and etiquette"
       ],
       prerequisites: "None - suitable for all levels",
-      price: "Contact for pricing"
+      price: "£105"
     },
     5: {
       id: 5,
       title: "Learn Salah with meaning, posture, and etiquette",
       image: Salah,
       description: "Master the complete art of Salah (Islamic prayer) with proper postures, recitations, and spiritual understanding. Learn both the physical and spiritual aspects of this fundamental pillar of Islam.",
-      duration: "1-2 months",
+      duration: "2.5 months",
       level: "Beginner",
       features: [
         "Step-by-step Salah instruction",
@@ -132,7 +130,7 @@ const CourseInfoPage = () => {
         "Advanced Sunnah practices"
       ],
       prerequisites: "None (ideal for children, new learners, and reverts who want to learn the correct Salah)",
-      price: "Contact for pricing"
+      price: "£90"
     }
   };
 

@@ -72,10 +72,9 @@ const FAQPage = () => {
           question: "How are the classes conducted?",
           answer: (
             <div>
-              <p className="mb-3">Classes are available in two formats:</p>
+              <p className="mb-3">Classes are available</p>
               <div className="space-y-2 text-sm">
                 <p><strong>Online:</strong> Via platforms like Zoom, offering one-on-one or small group sessions.</p>
-                <p><strong>In-Person:</strong> At our home-based setup in Bahria Town Phase 8, Rawalpindi.</p>
               </div>
             </div>
           )
@@ -113,7 +112,7 @@ const FAQPage = () => {
               <p className="mb-3">We offer flexible scheduling to accommodate various needs:</p>
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li><strong>Timings:</strong> Morning, Afternoon, and Evening slots</li>
-                <li><strong>Durations:</strong> Sessions of 30 or 60 minutes, depending on the course and student preference</li>
+                <li><strong>Durations:</strong> Sessions of 30-45 minutes, depending on the course and student preference</li>
               </ul>
             </div>
           )
@@ -170,7 +169,6 @@ const FAQPage = () => {
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li><strong>Sibling Discount:</strong> 10% off for the second child</li>
                 <li><strong>Long-Term Commitment Discount:</strong> 5% off when paying for 3+ months upfront</li>
-                <li><strong>Hifz Program Scholarships:</strong> Limited need-based aid for dedicated students</li>
               </ul>
             </div>
           )
@@ -179,7 +177,7 @@ const FAQPage = () => {
           question: "Can I request a reduced fee if I'm facing financial hardship?",
           answer: (
             <div>
-              <p className="mb-3">Absolutely. We believe Quran education should be accessible. Email us at info@daralhuda.com with:</p>
+              <p className="mb-3">Absolutely. We believe Quran education should be accessible. Email us at daralhudaquranacademy@gmail.com with:</p>
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li>A brief explanation of your situation</li>
                 <li>Your preferred course and schedule</li>
@@ -188,26 +186,6 @@ const FAQPage = () => {
             </div>
           )
         },
-        {
-          question: "How do fee negotiations work?",
-          answer: (
-            <div>
-              <p className="mb-2 text-sm">Submit a request via email/WhatsApp.</p>
-              <p className="mb-2 text-sm">We may adjust:</p>
-              <ul className="list-disc list-inside space-y-1 text-sm mb-2">
-                <li>Class frequency (e.g., 2/week instead of 3)</li>
-                <li>Session length (e.g., 30 mins instead of 60)</li>
-              </ul>
-              <p className="text-sm">All agreements are confidential.</p>
-            </div>
-          )
-        },
-        {
-          question: "Why don't you display all discounted prices on the website?",
-          answer: (
-            <p className="text-sm">To ensure fairness, personalized adjustments require direct communication. Published fees help us maintain quality teaching standards.</p>
-          )
-        }
       ]
     }
   ];

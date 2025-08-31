@@ -112,7 +112,7 @@ const AboutUs = () => {
 
         {/* Title */}
         <h2 className="mt-6 text-3xl md:text-4xl font-castoro text-customGreen text-center">
-          Dar Al Huda Qura’n Academy: Our heart and soul
+          Dar Al Huda Quran Academy: Our heart and soul
         </h2>
 
         <div className="w-full flex justify-center">
@@ -130,8 +130,7 @@ const AboutUs = () => {
           Dar Al Huda is built on Ikhlaas (sincerity), where every lesson is taught solely for Allah’s pleasure and in the
           spirit of the Prophet’s ﷺ teaching methods. The focus extends beyond knowledge to Tarbiyah (character building),
           nurturing good manners and strong Islamic values. Great importance is placed on Tajweed and accuracy, ensuring
-          correct pronunciation and authentic recitation of the Qur’an. To make learning accessible for all, high-quality
-          Quranic education is offered both online and in person.
+          correct pronunciation and authentic recitation of the Qur’an. To make learning accessible for all worldwide.
         </p>
       </section>
 

@@ -24,7 +24,7 @@ const Homepage = () => {
 
   const goToCourses = () => {
     navigate('/courses');
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }
 
   const goToEnrollment = () => {
@@ -77,7 +77,7 @@ const Homepage = () => {
             Learn Quran with Perfect Tajweed
           </h1>
           <p className="font-castoro mt-2 text-lg sm:text-xl md:text-xl md:max-w-3xl">
-            Online and In-Person Classes for Kids and Adults
+            Online Classes for Kids and Adults
           </p>
           <button onClick={goToEnrollment} className="mt-4 px-10 py-2.5 rounded-tl-2xl rounded-br-2xl bg-customGreen hover:bg-green-900 font-semibold shadow-lg transition">
             START FREE TRIAL
@@ -163,7 +163,7 @@ const Homepage = () => {
           </h2>
           <p className="text-base md:text-base font-inter font-light text-black text-center md:text-left">
             Learn with certified teachers holding Ijazah in Tajweed & Arabic, enjoy engaging Montessori-inspired
-            lessons for kids, and receive personalized 1-on-1 guidance. With flexible timings and bilingual instruction
+            lessons for kids, and receive personalized guidance. With flexible timings and bilingual instruction
             in Urdu, English, and Arabic, learning is easy, accessible, and effective.
           </p>
         </div>
@@ -266,88 +266,88 @@ const Homepage = () => {
       </section>
 
       <section className="w-full py-16 bg-white">
-  <div className="max-w-6xl mx-auto px-6 text-center">
-    {/* Section Title */}
-    <h2 className="text-3xl md:text-4xl font-castoro text-customGreen mb-12">
-      Featured Courses and Services
-    </h2>
-    
-    {/* Cards Grid */}
-    <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 md:px-16">
-      <div
-        className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
-        onMouseEnter={(e) => {
-          const img = e.currentTarget.querySelector('img');
-          if (img) img.style.transform = 'scale(1.1)';
-        }}
-        onMouseLeave={(e) => {
-          const img = e.currentTarget.querySelector('img');
-          if (img) img.style.transform = 'scale(1)';
-        }}
-        onClick={goToCourses}
-      >
-        <img
-          src={QuranRecitation}
-          alt="Quran Recitation"
-          className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out"
-        />
-        {/* Overlay */}
-        <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-5">
-          <p className="text-white font-castoro text-lg">Quran Recitation</p>
-        </div>
-      </div>
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          {/* Section Title */}
+          <h2 className="text-3xl md:text-4xl font-castoro text-customGreen mb-12">
+            Featured Courses and Services
+          </h2>
 
-      <div
-        className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
-        onMouseEnter={(e) => {
-          const img = e.currentTarget.querySelector('img');
-          if (img) img.style.transform = 'scale(1.1)';
-        }}
-        onMouseLeave={(e) => {
-          const img = e.currentTarget.querySelector('img');
-          if (img) img.style.transform = 'scale(1)';
-        }}
-        onClick={goToCourses}
-      >
-        <img
-          src={Tajweed}
-          alt="Tajweed"
-          className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out"
-        />
-        <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-5">
-          <p className="text-white font-castoro text-lg">
-            Tajweed
-          </p>
-        </div>
-      </div>
+          {/* Cards Grid */}
+          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 md:px-16">
+            <div
+              className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
+              onMouseEnter={(e) => {
+                const img = e.currentTarget.querySelector('img');
+                if (img) img.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                const img = e.currentTarget.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+              }}
+              onClick={goToCourses}
+            >
+              <img
+                src={QuranRecitation}
+                alt="Quran Recitation"
+                className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out"
+              />
+              {/* Overlay */}
+              <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-5">
+                <p className="text-white font-castoro text-lg">Quran Recitation</p>
+              </div>
+            </div>
 
-      {/* Card 3 */}
-      <div
-        className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
-        onMouseEnter={(e) => {
-          const img = e.currentTarget.querySelector('img');
-          if (img) img.style.transform = 'scale(1.1)';
-        }}
-        onMouseLeave={(e) => {
-          const img = e.currentTarget.querySelector('img');
-          if (img) img.style.transform = 'scale(1)';
-        }}
-        onClick={goToCourses}
-      >
-        <img
-          src={Qaida}
-          alt="Qaida"
-          className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out"
-        />
-        <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-5">
-          <p className="text-white font-castoro text-lg">
-            Qaida
-          </p>
+            <div
+              className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
+              onMouseEnter={(e) => {
+                const img = e.currentTarget.querySelector('img');
+                if (img) img.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                const img = e.currentTarget.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+              }}
+              onClick={goToCourses}
+            >
+              <img
+                src={Tajweed}
+                alt="Tajweed"
+                className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-5">
+                <p className="text-white font-castoro text-lg">
+                  Tajweed
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div
+              className="relative rounded-tl-3xl rounded-br-3xl overflow-hidden hover:cursor-pointer h-96"
+              onMouseEnter={(e) => {
+                const img = e.currentTarget.querySelector('img');
+                if (img) img.style.transform = 'scale(1.1)';
+              }}
+              onMouseLeave={(e) => {
+                const img = e.currentTarget.querySelector('img');
+                if (img) img.style.transform = 'scale(1)';
+              }}
+              onClick={goToCourses}
+            >
+              <img
+                src={Qaida}
+                alt="Qaida"
+                className="w-full h-full object-cover transform transition-transform duration-500 ease-in-out"
+              />
+              <div className="absolute bottom-0 left-0 w-full bg-black bg-opacity-70 py-5">
+                <p className="text-white font-castoro text-lg">
+                  Qaida
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       <CustomerReviewSection />
 

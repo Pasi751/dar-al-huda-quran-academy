@@ -19,11 +19,37 @@ export default function Navbar() {
   );
   };
 
+  const handleEnrollmentClick = (e) => {
+    e.preventDefault();
+    // Close mobile menu if open
+    setIsOpen(false);
+    
+    // Navigate to fee structure page and scroll to enrollment section
+    if (location.pathname === '/fee-structure') {
+      // If already on fee structure page, just scroll to enrollment section
+      const enrollmentSection = document.getElementById('enrollment-form');
+      if (enrollmentSection) {
+        enrollmentSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to fee structure page first, then scroll
+      navigate('/fee-structure');
+      // Use setTimeout to ensure navigation completes before scrolling
+      setTimeout(() => {
+        const enrollmentSection = document.getElementById('enrollment-form');
+        if (enrollmentSection) {
+          enrollmentSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
   const navLinks = [
     { name: "Homepage", path: "/" },
     { name: "About Us", path: "/about" },
     { name: "Courses", path: "/courses" },
     { name: "Fee Structure", path: "/fee-structure" },
+    { name: "Enrollment", path: "/fee-structure", isEnrollment: true },
     { name: "FAQ", path: "/faq" },
     { name: "Contact Now", isContact: true },
   ];
@@ -40,36 +66,51 @@ export default function Navbar() {
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-8">
-          {navLinks.map((link) =>
-            link.name === "Contact Now" ? (
-              <li key={link.name} className="font-inter text-sm">
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `px-4 py-2 rounded transition ${isActive
-                      ? "bg-customGreen text-white"
-                      : "bg-customGreen rounded-tl-xl rounded-br-xl text-white hover:bg-green-800"
-                    }`
-                  }
-                  onClick={handleContactClick}
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            ) : (
-              <li key={link.name} className="font-inter text-base">
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `transition-colors duration-200 ${isActive ? "text-customGreen font-bold" : "text-black hover:text-customGreen"
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            )
-          )}
+          {navLinks.map((link) => {
+            if (link.name === "Contact Now") {
+              return (
+                <li key={link.name} className="font-inter text-sm">
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `px-4 py-2 rounded transition ${isActive
+                        ? "bg-customGreen text-white"
+                        : "bg-customGreen rounded-tl-xl rounded-br-xl text-white hover:bg-green-800"
+                      }`
+                    }
+                    onClick={handleContactClick}
+                  >
+                    {link.name}
+                  </NavLink>
+                </li>
+              );
+            } else if (link.isEnrollment) {
+              return (
+                <li key={link.name} className="font-inter text-base">
+                  <button
+                    onClick={handleEnrollmentClick}
+                    className="transition-colors duration-200 text-black hover:text-customGreen"
+                  >
+                    {link.name}
+                  </button>
+                </li>
+              );
+            } else {
+              return (
+                <li key={link.name} className="font-inter text-base">
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `transition-colors duration-200 ${isActive ? "text-customGreen font-bold" : "text-black hover:text-customGreen"
+                      }`
+                    }
+                  >
+                    {link.name}
+                  </NavLink>
+                </li>
+              );
+            }
+          })}
         </ul>
 
         <div className="flex md:hidden w-full items-center justify-between h-20 px-4">
@@ -101,37 +142,52 @@ export default function Navbar() {
           </button>
         </div>
         <ul className="flex flex-col space-y-6 p-6">
-          {navLinks.map((link) =>
-            link.name === "Contact Now" ? (
-              <li key={link.name}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `px-4 py-2 rounded transition ${isActive
-                      ? "bg-customGreen text-white"
-                      : "bg-customGreen text-white hover:opacity-90"
-                    }`
-                  }
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            ) : (
-              <li key={link.name}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `transition-colors duration-200 ${isActive ? "text-customGreen font-bold" : "text-black hover:text-customGreen"
-                    }`
-                  }
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </NavLink>
-              </li>
-            )
-          )}
+          {navLinks.map((link) => {
+            if (link.name === "Contact Now") {
+              return (
+                <li key={link.name}>
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `px-4 py-2 rounded transition ${isActive
+                        ? "bg-customGreen text-white"
+                        : "bg-customGreen text-white hover:opacity-90"
+                      }`
+                    }
+                    onClick={handleContactClick}
+                  >
+                    {link.name}
+                  </NavLink>
+                </li>
+              );
+            } else if (link.isEnrollment) {
+              return (
+                <li key={link.name}>
+                  <button
+                    onClick={handleEnrollmentClick}
+                    className="transition-colors duration-200 text-black hover:text-customGreen w-full text-left"
+                  >
+                    {link.name}
+                  </button>
+                </li>
+              );
+            } else {
+              return (
+                <li key={link.name}>
+                  <NavLink
+                    to={link.path}
+                    className={({ isActive }) =>
+                      `transition-colors duration-200 ${isActive ? "text-customGreen font-bold" : "text-black hover:text-customGreen"
+                      }`
+                    }
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </NavLink>
+                </li>
+              );
+            }
+          })}
         </ul>
       </div>
     </nav>

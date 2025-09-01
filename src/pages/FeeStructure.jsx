@@ -12,7 +12,6 @@ const FeePage = () => {
     whatsapp: '',
     email: '',
     course: '',
-    classType: '',
     preferredDays: [],
     frequency: '',
     timeAvailability: '',
@@ -61,7 +60,7 @@ const FeePage = () => {
       ...prev,
       [name]: value
     }));
-    
+
     // Clear error for this field when user starts typing
     if (errors[name]) {
       setErrors(prev => ({
@@ -79,7 +78,7 @@ const FeePage = () => {
         ? prev.preferredDays.filter(d => d !== day)
         : [...prev.preferredDays, day]
     }));
-    
+
     // Clear error for preferred days when user makes a selection
     if (errors.preferredDays) {
       setErrors(prev => ({
@@ -116,10 +115,6 @@ const FeePage = () => {
       newErrors.course = 'Please select a preferred course';
     }
 
-    if (!formData.classType) {
-      newErrors.classType = 'Please select a class type';
-    }
-
     if (formData.preferredDays.length === 0) {
       newErrors.preferredDays = 'Please select at least one preferred day';
     }
@@ -135,16 +130,14 @@ const FeePage = () => {
     return newErrors;
   };
 
-  // Handle form submission
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
     const formErrors = validateForm();
-    
     if (Object.keys(formErrors).length > 0) {
       setErrors(formErrors);
       setShowErrors(true);
-      
       // Scroll to first error
       setTimeout(() => {
         const firstErrorField = document.querySelector('.border-red-500');
@@ -152,15 +145,12 @@ const FeePage = () => {
           firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       }, 100);
-      
       return;
     }
 
-    // If validation passes
-    setErrors({});
-    setShowErrors(false);
 
-    const response = await fetch("https://formsubmit.co/ajax/daralhudaquranacademy@gmail.com", {
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/daralhudaquranacademy@gmail.com", {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -169,25 +159,30 @@ const FeePage = () => {
         body: JSON.stringify(
           formData)
       })
-    
-    // Here you would typically submit the form data
-    console.log('Form submitted successfully:', formData);
-    alert('Enrollment form submitted successfully! We will contact you soon.');
-    
-    // Reset form
-    setFormData({
-      fullName: '',
-      age: '',
-      gender: '',
-      whatsapp: '',
-      email: '',
-      course: '',
-      classType: '',
-      preferredDays: [],
-      frequency: '',
-      timeAvailability: '',
-      notes: ''
-    });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        // Reset form
+        setFormData({
+          fullName: '',
+          age: '',
+          gender: '',
+          whatsapp: '',
+          email: '',
+          course: '',
+          preferredDays: [],
+          frequency: '',
+          timeAvailability: '',
+          notes: ''
+        });
+        setErrors({});
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Error sending message.");
+    }
   };
 
   return (
@@ -347,7 +342,7 @@ const FeePage = () => {
               </div>
             )}
 
-            <form id="enrollment-form" onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} id="enrollment-form" className="space-y-8">
               {/* Student Details */}
               <div className="bg-gray-50 rounded-2xl p-8">
                 <h3 className="text-2xl font-castoro text-customGreen mb-6">Student Details</h3>
@@ -359,9 +354,8 @@ const FeePage = () => {
                       name="fullName"
                       value={formData.fullName}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen text-sm placeholder:text-sm placeholder:font-normal ${
-                        errors.fullName ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen text-sm placeholder:text-sm placeholder:font-normal ${errors.fullName ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Enter full name"
                     />
                     {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
@@ -373,9 +367,8 @@ const FeePage = () => {
                       name="age"
                       value={formData.age}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen text-sm placeholder:text-sm placeholder:font-normal ${
-                        errors.age ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen text-sm placeholder:text-sm placeholder:font-normal ${errors.age ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Enter age"
                       min="1"
                       max="100"
@@ -384,13 +377,12 @@ const FeePage = () => {
                   </div>
                   <div className="md:col-span-1">
                     <label className="block font-inter text-black font-base mb-2">Gender<span className="text-red-500">*</span></label>
-                    <select 
+                    <select
                       name="gender"
                       value={formData.gender}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${
-                        errors.gender ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${errors.gender ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     >
                       <option value="" className="text-sm">Select Gender</option>
                       <option value="male">Male</option>
@@ -412,9 +404,8 @@ const FeePage = () => {
                       name="whatsapp"
                       value={formData.whatsapp}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen text-sm placeholder:text-sm placeholder:font-normal ${
-                        errors.whatsapp ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen text-sm placeholder:text-sm placeholder:font-normal ${errors.whatsapp ? 'border-red-500' : 'border-gray-300'
+                        }`}
                       placeholder="Enter WhatsApp number"
                     />
                     {errors.whatsapp && <p className="text-red-500 text-xs mt-1">{errors.whatsapp}</p>}
@@ -439,13 +430,12 @@ const FeePage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block font-inter text-black font-base mb-2">Preferred Course<span className="text-red-500">*</span></label>
-                    <select 
+                    <select
                       name="course"
                       value={formData.course}
                       onChange={handleInputChange}
-                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${
-                        errors.course ? 'border-red-500' : 'border-gray-300'
-                      }`}
+                      className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${errors.course ? 'border-red-500' : 'border-gray-300'
+                        }`}
                     >
                       <option value="" className="text-sm">Select Course</option>
                       <option value="qaida">Qaida</option>
@@ -470,11 +460,11 @@ const FeePage = () => {
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                       {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
                         <label key={day} className="flex items-center">
-                          <input 
-                            type="checkbox" 
+                          <input
+                            type="checkbox"
                             checked={formData.preferredDays.includes(day)}
                             onChange={() => handleDayChange(day)}
-                            className="mr-2 text-customGreen focus:ring-customGreen" 
+                            className="mr-2 text-customGreen focus:ring-customGreen"
                           />
                           <span className="text-black text-sm">{day}</span>
                         </label>
@@ -487,13 +477,12 @@ const FeePage = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className="block font-inter text-black font-base mb-2">Frequency of Classes<span className="text-red-500">*</span></label>
-                      <select 
+                      <select
                         name="frequency"
                         value={formData.frequency}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${
-                          errors.frequency ? 'border-red-500' : 'border-gray-300'
-                        }`}
+                        className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${errors.frequency ? 'border-red-500' : 'border-gray-300'
+                          }`}
                       >
                         <option value="" className="text-sm">Select frequency</option>
                         <option value="2">2 Days a week</option>
@@ -503,13 +492,12 @@ const FeePage = () => {
                     </div>
                     <div>
                       <label className="block font-inter text-black font-base mb-2">Time Availability<span className="text-red-500">*</span></label>
-                      <select 
+                      <select
                         name="timeAvailability"
                         value={formData.timeAvailability}
                         onChange={handleInputChange}
-                        className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${
-                          errors.timeAvailability ? 'border-red-500' : 'border-gray-300'
-                        }`}
+                        className={`w-full px-4 py-1 border rounded-lg focus:outline-none focus:ring-2 focus:ring-customGreen focus:border-customGreen font-inter text-sm ${errors.timeAvailability ? 'border-red-500' : 'border-gray-300'
+                          }`}
                       >
                         <option value="" className="text-sm">Select time</option>
                         <option value="morning">Morning</option>

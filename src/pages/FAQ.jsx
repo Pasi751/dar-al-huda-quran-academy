@@ -178,7 +178,7 @@ const FAQPage = () => {
           question: "Can I request a reduced fee if I'm facing financial hardship?",
           answer: (
             <div>
-              <p className="mb-3">Absolutely. We believe Quran education should be accessible. Email us at daralhudaquranacademy@gmail.com with:</p>
+              <p className="mb-3">Absolutely. We believe Quran education should be accessible. Email us at <a href="mailto:daralhudaquranacademy@gmail.com" class="text-blue-500 underline">daralhudaquranacademy@gmail.com</a>  with:</p>
               <ul className="list-disc list-inside space-y-1 text-sm">
                 <li>A brief explanation of your situation</li>
                 <li>Your preferred course and schedule</li>

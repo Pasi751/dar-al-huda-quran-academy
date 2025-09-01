@@ -127,7 +127,7 @@ const AboutUs = () => {
 
         {/* Paragraph */}
         <p className="mt-4 text-base md:text-base font-inter font-light text-black text-center md:text-center md:max-w-3xl">
-          Dar Al Huda is built on Ikhlaas (sincerity), where every lesson is taught solely for Allah’s pleasure and in the
+          Dar Al Huda Quran Academy is built on Ikhlaas (sincerity), where every lesson is taught solely for Allah’s pleasure and in the
           spirit of the Prophet’s ﷺ teaching methods. The focus extends beyond knowledge to Tarbiyah (character building),
           nurturing good manners and strong Islamic values. Great importance is placed on Tajweed and accuracy, ensuring
           correct pronunciation and authentic recitation of the Qur’an. To make learning accessible for all worldwide.

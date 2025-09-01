@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Users, BookOpen, Clock, Award, DollarSign, Phone } from 'lucide-react';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
+import FAQImage from '../images/faq.jpg';
 
 const FAQPage = () => {
   const [openItems, setOpenItems] = useState({});
@@ -295,7 +296,7 @@ const FAQPage = () => {
         {/* Hero Section */}
         <section className="relative w-full h-screen overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            src={FAQImage}
             alt="FAQ Background"
             className="absolute inset-0 w-full h-full object-cover"
           />

@@ -38,16 +38,38 @@ export default function CustomerReviewSection() {
       id: 5,
       name: "Shagufta, Mother of Alveena (Age 7)",
       location: "(Islamabad, Pakistan)",
-      rating: 4,
+      rating: 5,
       review: "My daughter has made amazing progress since joining the Quran classes. She has developed a love for learning and looks forward to each session. The teacher is kind, patient, and explains everything in a way that's easy for young children to understand. I'm truly grateful for the positive impact these classes have had on her recitation and connection with the Quran."
     },
     {
       id: 6,
       name: "Sister Asma",
       location: "(London, United Kingdom)",
-      rating: 4,
+      rating: 5,
       review: "These classes have helped me regain my confidence in reading Arabic, Alhamdulillah. The teaching is clear, informative, and enjoyable. I’ve tried learning before but never felt this comfortable. I look forward to every class and truly feel it has benefited me. May Allah reward you and allow your Quran Academy to flourish."
-    }
+    },
+    {
+      id: 7,
+      name: "Saadia, Mother of Eshaal (Age 10)",
+      location: "(Islamabad, Pakistan)",
+      rating: 5,
+      review: "My experience with Mam Huda has been wonderful. She is hardworking, dedicated, and truly cares about her students. My daughter loves her classes and feels very comfortable because of her friendly and cooperative nature. Alhamdulillah, we’re highly satisfied — highly recommended!"
+    },
+    {
+      id: 8,
+      name: "Polly, Mother of Isa (Age 9)",
+      location: "(London, United Kingdom)",
+      rating: 5,
+      review: "Since my son started learning the Qur’an with Sister Huda, I have noticed remarkable progress in his recitation and understanding. He has gained confidence and clarity in reading the Qur’an. Sister Huda has an excellent teaching style that makes learning fun and simple to understand. She is patient, soft-spoken, and always encouraging, which has helped my son develop a genuine love for learning the Qur’an. I am truly grateful to have such a dedicated and well-mannered Quran teacher guiding my child on this journey."
+    },
+    {
+      id: 8,
+      name: "Shaida, Mother of Nisa (Age 11)",
+      location: "(London, United Kingdom)",
+      rating: 5,
+      review: "My daughter has been studying Qur’an with Sister Huda, and the experience has been amazing. She feels very comfortable in her classes and enjoys every lesson. Sister Huda’s unique style of teaching has made Quran easy to understand and enjoyable for my daughter. The bond she has built with her teacher is healthy and encouraging, which motivates her to continue learning with happiness. I have found Sister Huda to be one of the best Quran teachers kind, caring, and always going above and beyond to ensure high-quality teaching."
+    },
+
   ];
 
   const nextReview = () => {

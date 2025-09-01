@@ -195,7 +195,7 @@ const FeePage = () => {
       <Navbar />
       <div className="bg-gray-50 min-h-screen font-inter font-light">
         {/* Hero Section */}
-        <section className="relative w-full h-screen overflow-hidden">
+        <section className="relative w-full h-screen overflow-hidden mb-9">
           <img
             src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt="Quran Learning"
@@ -215,7 +215,7 @@ const FeePage = () => {
           </div>
         </section>
 
-        {/* Key Information Cards */}
+        {/* Key Information Cards
         <section className="max-w-7xl mx-auto px-6 md:px-12 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="bg-white rounded-2xl p-6 shadow-lg text-center">
@@ -236,7 +236,7 @@ const FeePage = () => {
               <p className="text-black font-inter font-base">We provide fees in other currencies upon request</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Pricing Tables */}
         <section className="max-w-7xl mx-auto px-6 md:px-12 pb-16">
@@ -498,8 +498,6 @@ const FeePage = () => {
                         <option value="" className="text-sm">Select frequency</option>
                         <option value="2">2 Days a week</option>
                         <option value="3">3 Days a week</option>
-                        <option value="4">4 Days a week</option>
-                        <option value="5">5 Days a week</option>
                       </select>
                       {errors.frequency && <p className="text-red-500 text-xs mt-1">{errors.frequency}</p>}
                     </div>

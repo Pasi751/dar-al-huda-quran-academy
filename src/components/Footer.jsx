@@ -1,11 +1,37 @@
+import { useLocation, useNavigate } from "react-router-dom";
 import Phone from '../images/phone-call.png';
 import QrCode from '../images/qrcode.png';
 import Facebook from '../images/facebook.png';
 import Whatsapp from '../images/whatsapp.png';
 import Instagram from '../images/instagram.png';
 
-
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleEnrollmentClick = (e) => {
+    e.preventDefault();
+    
+    // Navigate to fee structure page and scroll to enrollment section
+    if (location.pathname === '/fee-structure') {
+      // If already on fee structure page, just scroll to enrollment section
+      const enrollmentSection = document.getElementById('enrollment-form');
+      if (enrollmentSection) {
+        enrollmentSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to fee structure page first, then scroll
+      navigate('/fee-structure');
+      // Use setTimeout to ensure navigation completes before scrolling
+      setTimeout(() => {
+        const enrollmentSection = document.getElementById('enrollment-form');
+        if (enrollmentSection) {
+          enrollmentSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <footer className="bg-white text-white relative overflow-hidden" style={{ backgroundColor: '#005243' }}>
       {/* Main Footer Content */}
@@ -69,6 +95,14 @@ export default function Footer() {
                 <li><a href="/about" className="hover:opacity-80 transition-opacity">About us</a></li>
                 <li><a href="/courses" className="hover:opacity-80 transition-opacity">Courses Page</a></li>
                 <li><a href="/fee-structure" className="hover:opacity-80 transition-opacity">Fee structure</a></li>
+                <li>
+                  <button 
+                    onClick={handleEnrollmentClick}
+                    className="hover:opacity-80 transition-opacity text-left"
+                  >
+                    Enrollment
+                  </button>
+                </li>
                 <li><a href="/faq" className="hover:opacity-80 transition-opacity">FAQ</a></li>
               </ul>
             </div>

@@ -139,7 +139,7 @@ const Homepage = () => {
         {/* Paragraph */}
         <p className="mt-4 text-base md:text-base font-inter font-light text-black text-center md:text-center md:max-w-3xl">
           With expertise in Sharia Law & Islamic Studies, Educational Psychology (using Montessori-inspired methods for children),
-          and Multilingual Instruction (Arabic, Urdu, and English), Ustadha Huda has mentored over 90 students across 15+ countries
+          and Multilingual Instruction (Arabic, Urdu, and English), Dar Al Huda Quran Academy has mentored over 90 students across 15+ countries
           in the past 4+ years. We offer online classes worldwide via Zoom. Whether you are a child starting with Qaida, an adult perfecting Tajweed or memorization, or
           a revert learning Quranic Arabic, we ensure your journey is transformative, not transactional.
         </p>
